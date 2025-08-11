@@ -1,0 +1,23 @@
+# Visual Studio cache/options
+.vs/
+
+# Ignorar archivos compilados
+*.class
+
+# Ignorar carpetas de compilación
+/bin
+
+# Ignorar archivos de configuración de Vs code
+.vscode/
+
+# Executables
+*.out
+*.app
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+x64/
+Gesti\303\263n\ de\ rutas/
+
