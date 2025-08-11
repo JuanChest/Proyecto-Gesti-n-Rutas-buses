@@ -1,0 +1,10 @@
+﻿  ElegirRuta.cpp
+  GestionBuses.cpp
+  GestionRutas.cpp
+C:\Users\JuanChest\Documents\Programación\Proyecto B2 - Grupo E\GestionRutas.cpp(265,17): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+  LeerRutas.cpp
+  Proyecto.cpp
+  LeerBuses.cpp
+C:\Users\JuanChest\Documents\Programación\Proyecto B2 - Grupo E\LeerBuses.cpp(72,12): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+  Generando código...
+  Gestion de rutas.vcxproj -> C:\Users\JuanChest\Documents\Programación\Proyecto B2 - Grupo E\x64\Debug\Gestion de rutas.exe
