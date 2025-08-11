@@ -22,7 +22,7 @@ x64/
 Gestion\ de\ rutas/
 
 # Configuración de visual studio
-*.vsxproj
+*.vcxproj
 *.filters
 *.user
 
