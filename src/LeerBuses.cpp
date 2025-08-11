@@ -6,7 +6,7 @@ void leerBuses(tBuses& buses, tRutas& rutas)
 	ifstream lectura;
 	int numRuta = -1;
 	buses.contador = 0;
-	lectura.open("Buses.txt");
+	lectura.open("src/Archivos/Buses.txt");
 	if (!lectura.is_open())
 	{
 		cout << "No se pudo leer el archivo" << endl;
@@ -76,7 +76,7 @@ int genera_aleatorios()
 void guardarBuses(const tBuses buses)
 {
 	ofstream escritura;
-	escritura.open("Buses.txt");
+	escritura.open("src/Archivos/Buses.txt");
 	for (int i = 0; i < MAXBuses; i++)
 	{
 		if (buses.ListaBuses[i].ruta.numRuta != 0)

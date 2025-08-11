@@ -6,7 +6,7 @@ void leerRutas(tRutas& rutas)
 	tRuta ruta;
 	ifstream lectura;
 	rutas.contador = 0;
-	lectura.open("Rutas.txt");
+	lectura.open("src/Archivos/Rutas.txt");
 	if (!lectura.is_open())
 	{
 		cout << "No se pudo leer el archivo" << endl;
@@ -30,7 +30,7 @@ void leerRutas(tRutas& rutas)
 void guardarRutas(const tRutas rutas)
 {
 	ofstream escritura;
-	escritura.open("Rutas.txt");
+	escritura.open("src/Archivos/Rutas.txt");
 	for (int i = 0; i < rutas.contador; i++)
 	{
 		if (rutas.ListaRutas[i].numRuta != 0)
