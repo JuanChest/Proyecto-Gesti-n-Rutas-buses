@@ -19,5 +19,10 @@
 *.lo
 *.o
 x64/
-Gesti\303\263n\ de\ rutas/
+Gestion\ de\ rutas/
+
+# Configuración de visual studio
+*.vsxproj
+*.filters
+*.user
 
