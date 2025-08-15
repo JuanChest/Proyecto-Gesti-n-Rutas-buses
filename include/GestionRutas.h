@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include <regex>
 using namespace std;
 #include <conio.h>
 #include <iomanip>
@@ -9,6 +10,7 @@ using namespace std;
 #include <Windows.h>
 #include "LeerBuses.h"
 #include "LeerRutas.h"
+
 
 //Estructuras
 
@@ -34,3 +36,6 @@ void centrar_texto(const char* texto, int y);
 void enter();
 //Dibuja un recuadro
 void recuadro(int xs, int ys, int xi, int yi);
+
+//Verifica el formato de la hora para el horario ingresado (hh:mm)
+bool verificarFormatoHora(string horaIngresada);

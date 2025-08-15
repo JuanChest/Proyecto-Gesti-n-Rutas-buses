@@ -4,4 +4,5 @@
 4 Guayaquil Jipijapa 9:00
 5 Imbabura Loja 5:00
 6 Quito Latacunga 12:00
+7 Manabi Cuenca 12:00
 -1

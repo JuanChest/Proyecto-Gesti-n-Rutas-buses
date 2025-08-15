@@ -53,7 +53,6 @@ void menuGestionRutas(tBuses& buses, tRutas& rutas)
 }
 void aniadirRuta(tRutas& rutas, tBuses& buses)
 {
-	string hora_ingresada = "";
 	system("cls");
 	centrar_texto("=====Añadir Ruta=====", 0);
 	//Se completan los campos de la ruta nueva
@@ -65,19 +64,33 @@ void aniadirRuta(tRutas& rutas, tBuses& buses)
 	gotoxy(1, 7); cout << "   " << "Lugar de destino: ";
 	gotoxy(22, 7); cin >> ruta.rutaDestino;
 	gotoxy(1, 8); cout << "   " << "Hora de Salida(hh:mm): ";
-	gotoxy(27, 8); cin >> ruta.horario;
-	gotoxy(1, 9); cout << "-----------------------------------------";
-	/*
-	Se le asigna el numero de ruta, como es algo nuevo se le asigna el numero siguiente de la
-	ultima ruta de la lista, esto esta muy ligado al indice del arreglo;
-	*/
+	string horaIngresada;
+	gotoxy(27, 8); cin >> horaIngresada;
 
-	ruta.numRuta = 1 + rutas.ListaRutas[rutas.contador - 1].numRuta;
-	rutas.ListaRutas[rutas.contador] = ruta;
-	rutas.contador++;
-	//Se imprimen los Buses que no tengan una ruta asignada o los que tiene por numero de ruta 0
-	imprimirBusesDisponibles(buses);
-	asignarBuses(buses, ruta);
+	if (!verificarFormatoHora(horaIngresada)) {
+		cout << endl;
+		cout << "Hora INCORRECTA" << endl;
+		enter();
+	}
+	else {
+		ruta.horario = horaIngresada;
+		gotoxy(1, 9); cout << "-----------------------------------------";
+		/*
+		Se le asigna el numero de ruta, como es algo nuevo se le asigna el numero siguiente de la
+		ultima ruta de la lista, esto esta muy ligado al indice del arreglo;
+		*/
+
+		ruta.numRuta = 1 + rutas.ListaRutas[rutas.contador - 1].numRuta;
+		rutas.ListaRutas[rutas.contador] = ruta;
+		rutas.contador++;
+		//Se imprimen los Buses que no tengan una ruta asignada o los que tiene por numero de ruta 0
+		imprimirBusesDisponibles(buses);
+		asignarBuses(buses, ruta);
+	}
+}
+bool verificarFormatoHora(string horaIngresada) {
+	regex formato("^([01]\\d|2[0-3]):([0-5]\\d)$");
+	return regex_match(horaIngresada, formato);
 }
 void imprimirBusesDisponibles(const tBuses buses)
 {
@@ -168,8 +181,17 @@ void modificarRuta(tRutas& rutas)
 	cin >> ruta.rutaPartida;
 	cout << "Nuevo Destino: ";
 	cin >> ruta.rutaDestino;
-	cout << "Nuevo Horario: ";
-	cin >> ruta.horario;
+	string horaIngresada;
+	do {
+		cout << "Nuevo Horario: ";
+		cin >> horaIngresada;
+		if (!verificarFormatoHora(horaIngresada)) {
+			cout << "Hora INCORRECTA" << endl;
+		}
+	} while (!verificarFormatoHora(horaIngresada));
+
+	ruta.horario = horaIngresada;
+	cout << endl;
 	cout << "-----------------------------------------" << endl;
 	ruta.numRuta = rutas.ListaRutas[numRuta - 1].numRuta;
 	gotoxy(45, 3); cout << "\t" << left << setw(7) << "Ruta #" << left << setw(13) << ruta.numRuta 
@@ -188,6 +210,7 @@ void modificarRuta(tRutas& rutas)
 		<< ruta.horario << "|" << endl;
 	do
 	{
+		cout << endl;
 		cout << endl;
 		cout << "¿Guardar cambio? |1. Si|2. No|: ";
 		cin >> guardar;
