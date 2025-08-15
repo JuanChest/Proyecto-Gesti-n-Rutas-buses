@@ -36,7 +36,7 @@ void menuPrincipal(tBuses& buses, tRutas& rutas)
             recuadro(1, 23, 119, 27);
             recuadro(1, 24, 119, 26);
             centrar_texto("T R A N S. P O L I B U S", 2);
-            centrar_texto("Autores: Melany Alarcon | Alison Betancourt | Juan Cofre | Daniel Diaz | Emily Reyes", 25);
+            centrar_texto("Autores: | Alison Betancourt | Juan Cofre |", 25);
             centrar_texto("======Gestor de Transporte======", 7);
             centrar_texto("----------------------", 9);
             centrar_texto("1. Elegir Ruta        ", 10);
